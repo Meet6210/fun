@@ -1,0 +1,28 @@
+<html>
+  <head>
+    
+    <title>Petroleum Losses</title>
+    
+  </head>
+  
+<body style="background-color:lightyellow;"> 
+
+   
+ <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ol><font size="3">
+        {% for m in messages %}
+            <li>{{ m }} </li> <br/>
+        {% endfor %}
+        </font>
+        </ol>
+     
+ {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  
+</body>
+
+</html>
+

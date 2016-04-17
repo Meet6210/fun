@@ -1,0 +1,53 @@
+﻿<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Analysis of Petroleum Losses</h1>
+
+<form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+        Order To be Placed by Manish Petroleum to Bharat Petroleum Refinery(in litres):<br>
+        {{ form.Stock(size=25) }}
+
+        {% for error in form.Stock.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+   </p>
+
+    <p>  
+        How much Petrol to be Fuelled in your Car,Sir(in litres):<br>
+        {{ form.Pe(size=25) }}
+
+        {% for error in form.Pe.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+     <p>  
+        Product outlet Temperature:<br>
+        {{ form.t(size=25) }}
+
+        {% for error in form.t.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    <p><input type="submit" value="Submit"></p>
+    <p>The transportation and marketing of petroleum liquids involve many distinct operations, each of
+which represents a potential source of evaporation loss. Crude oil is transported from production operations
+to a refinery by tankers, barges, rail tank cars, tank trucks, and pipelines. Refined petroleum products are
+conveyed to fuel marketing terminals and petrochemical industries by these same modes. From the fuel
+marketing terminals, the fuels are delivered by tank trucks to service stations, commercial accounts, and local
+bulk storage plants. The final destination for gasoline is usually a motor vehicle gasoline tank. Similar
+distribution paths exist for fuel oils and other petroleum products
+.</p> 
+    <p> Evaporative emissions from the transportation and marketing of petroleum liquids may be
+considered, by storage equipment and mode of transportation used, in four categories:
+1. Rail tank cars, tank trucks, and marine vessels: loading, transit, and ballasting losses.
+2. Service stations: bulk fuel drop losses and underground tank breathing losses.
+3. Motor vehicle tanks: refueling losses.
+4. Large storage tanks: breathing, working, and standing storage losses</p>
+    </p>
+
+</form>
+{% endblock %}
